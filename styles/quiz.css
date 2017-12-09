@@ -1,0 +1,10 @@
+@charset"utf-8";
+.box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: solid 4px #4682b4;
+}
+.box .p {
+    margin: 0; 
+    padding: 0;
+}

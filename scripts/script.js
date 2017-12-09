@@ -1,3 +1,9 @@
+var cs = document.createElement("link");
+cs.rel="stylesheet";
+cs.href="/styles/quiz.css";
+cs.type="text/css";
+document.getElementsByTagName('head')[0].appendChild(cs);
+
 //問題と解答
 qa = new Array();
 qa[0] = ["春すぎて<br>夏来にけらし<br>白妙の","衣ほすてふ<br>天の香具山","あまりてなどか<br>人の恋しき","三笠の山に<br>出でし月かも",1];
@@ -40,15 +46,16 @@ function setReady() {
 
 //問題表示
 function quiz() {
-	var s, n;
+	var m, s, n;
 	//問題
 	rnd = Math.floor(Math.random() * qa.length); //乱数
-	document.getElementById("text_q").innerHTML = (count + 1) + "問目：<br>" + qa[rnd][0];
+	m = "<div class='box'><p>" + qa[rnd][0] + "</p></div>";
+	document.getElementById("text_q").innerHTML = m;
 	//選択肢
 	s = "";
 	for (n=1;n<=q_sel;n++) {
 		if (qa[rnd][n] != "") {
-			s += " <br><a href='javascript:anser( " +  n  + " )'>" + qa[rnd][n] + "</a> ";
+			s += " <br><a href='javascript:anser( " +  n  + " )'><div class='box'><p>" + qa[rnd][n] + "</p></div></a> ";
 		}
 	}
 	document.getElementById("text_s").innerHTML = s;
