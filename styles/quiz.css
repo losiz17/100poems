@@ -6,6 +6,7 @@
 	  width: 100px; height: 200px;
 	  font-size: 25px;
 		background:url('/images/boxpic.jpeg');
+		border-image: url('/images/border.jpeg') 24 24 round;
 }
 .box p{
 	position: absolute;
