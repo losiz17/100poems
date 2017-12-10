@@ -5,13 +5,22 @@ a:hover { color:#000; text-decoration:none }
 a:active { color:#000; text-decoration:none }
 
 body {
-  background: url(/images/mainpic.jpg) center center / cover no-repeat fixed;
+  background: url(/images/mainpic2.jpg) center center / cover no-repeat fixed;
 	writing-mode: vertical-rl;
+	font-family: "Kokoro";
 }
 h1{
 	font-size: 50px;
 }
 body .l{
+	writing-mode: vertical-rl;
+	position:absolute;
+	top: 20%;
+	left:50%;
+	display:inline;
+	transform:translate(-50%, -50%)
+}
+body .m{
 	writing-mode: vertical-rl;
 	position:absolute;
 	top:50%;

@@ -6,7 +6,7 @@ document.getElementsByTagName('head')[0].appendChild(cs);
 
 //問題と解答
 qa = new Array();
-qa[0] = ["春すぎて<br>夏来にけらし<br>白妙の","衣ほすてふ<br>天の香具山","あまりてなどか<br>人の恋しき","三笠の山に<br>出でし月かも",1];
+qa[0] = ["はるすぎて<br>なつきにけらし<br>しろたえの","ころもほすてふ<br>あまのかぐやま","あまりてなどか<br>ひとのこいしき","みかさのやまに<br>いでしつきかも",1];
 qa[1] = ["天の原<br>ふりさけ見れば<br>春日なる","行くへも知らぬ<br>恋の道かな","三笠の山に<br>出でし月かも","夢の通ひ路<br>人めよくらむ",2];
 qa[2] = ["これやこの<br>行くも帰るも<br>別れては","霧立ちのぼる<br>秋の夕暮れ","閨のひまさへ<br>つれなかりけり","知るも知らぬも<br>逢坂の関",3];
 qa[3] = ["住の江の<br>岸による波<br>よるさへや","夢の通ひ路<br>人めよくらむ","霧立ちのぼる<br>秋の夕暮れ","流れもあへぬ<br>紅葉なりけり",1];
@@ -55,7 +55,7 @@ function quiz() {
 	s = "";
 	for (n=1;n<=q_sel;n++) {
 		if (qa[rnd][n] != "") {
-			s += " <br><a href='javascript:anser( " +  n  + " )'><div class='box'><p>" + qa[rnd][n] + "</p></div></a> ";
+			s += " <a href='javascript:anser( " +  n  + " )'><div class='box'><p>" + qa[rnd][n] + "</p></div></a> ";
 		}
 	}
 	document.getElementById("text_s").innerHTML = s;
