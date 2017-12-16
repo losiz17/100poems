@@ -6,6 +6,7 @@ a:active { color:#000; text-decoration:none }
 
 html,body {
   background: url(/images/mainpic5.jpg) center center / cover no-repeat fixed;
+	writing-mode: vertical-rl;
 	font-family: "Kokoro";
 	margin:0px; padding:0px; height:100%;
 }
@@ -14,12 +15,15 @@ div.pagebox {
    min-height: 100%;
 }
 h1{
-	writing-mode: vertical-rl;
 	font-size: 50px;
 	color: aliceblue;
+
+}
+h1:first-letter {
+	font-size: 2em;
+	color: #7172ac;
 }
 .pagebox .l{
-	writing-mode: vertical-rl;
 	position:absolute;
 	top: 20%;
 	left:50%;
@@ -27,7 +31,6 @@ h1{
 	transform:translate(-50%, -50%)
 }
 .pagebox .m{
-	writing-mode: vertical-rl;
 	position:absolute;
 	top:50%;
 	left:50%;

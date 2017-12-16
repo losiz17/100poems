@@ -21,7 +21,7 @@ qa[11] = ["大江山<br>いく野の道の<br>遠ければ","あまりてなど�
 qa[12] = ["淡路島<br>かよふ千鳥の<br>鳴く声に","夢の通ひ路<br>人めよくらむ","ふるさと寒く<br>衣うつなり","いく夜寝覚めぬ<br>須磨の関守",3];
 qa[13] = ["秋風に<br>たなびく雲の<br>絶え間より","もれ出づる月の<br>影のさやけさ","いく夜寝覚めぬ<br>須磨の関守","あまりてなどか<br>人の恋しき",1];
 qa[14] = ["ほととぎす<br>鳴きつる方を<br>ながむれば","あまりてなどか<br>人の恋しき","ただ有明の<br>月ぞ残れる","ふりゆくものは<br>わが身なりけり",2];
-qa[15] = ["村雨の<br>露もまだひぬ<br>真木の葉に","つらぬきとめぬ<br>玉ぞ散りける","三笠の山に<br>出でし月かも","名こそ流れて<br>なほ聞こえけれ","霧立ちのぼる<br>秋の夕暮れ",3];
+qa[15] = ["村雨の<br>露もまだひぬ<br>真木の葉に","三笠の山に<br>出でし月かも","名こそ流れて<br>なほ聞こえけれ","霧立ちのぼる<br>秋の夕暮れ",3];
 qa[16] = ["み吉野の<br>山の秋風<br>さ夜ふけて","三笠の山に<br>出でし月かも","ふるさと寒く<br>衣うつなり","つらぬきとめぬ<br>玉ぞ散りける",2];
 qa[17] = ["花さそふ<br>嵐の庭の<br>雪ならで","ふりゆくものは<br>わが身なりけり","ふるさと寒く<br>衣うつなり","衣ほすてふ<br>天の香具山",1];
 qa[18] = ["夜もすがら<br>もの思ふころは<br>明けやらで","あまりてなどか<br>人の恋しき","名こそ流れて<br>なほ聞こえけれ","閨のひまさへ<br>つれなかりけり",3];
@@ -68,29 +68,29 @@ function quiz() {
 //解答表示
 function anser(num) {
 	var s;
-	//
+	
 	s = "";
 	m = "";
 	tmp = qa[rnd][q_sel+1];
 	document.getElementById("text_s").innerHTML = s;
 	document.getElementById("text_q").innerHTML = m;
 	
-	s = (count + 1) + "問目：";
+	//s = (count + 1) + "問目：";
 	//答え合わせ
 	if (num == qa[rnd][q_sel + 1]) {
 		//正解
-		ansers[count] = "正解<br>";
+		ansers[count] = "<div class='result'>正解<br></div>";
 	} else {
-		ansers[count] = "不正解<br>";
+		ansers[count] = "<div class='result'>不正解<br></div>";
 	}
-	s += "<div class='ans'>"+ ansers[count] + qa[rnd][0] + "<br>"+qa[rnd][tmp] +"</div>";
+	s +=  ansers[count] + "<div class='ans'>" + qa[rnd][0] + "<br>"+qa[rnd][tmp] +"</div>";
 	document.getElementById("text_a").innerHTML = s;
 	
 	
 	//次の問題を表示
 	count++;
 	if (count < q_max) {
-		next = "【<a href='javascript:quiz()'><div class='next'>次の問題へ</div></a>】";
+		next = "<a href='javascript:quiz()'><div class='next'>次の問題へ</div></a>";
 		document.getElementById("text_next").innerHTML = next;
 		//quiz();
 	} else {

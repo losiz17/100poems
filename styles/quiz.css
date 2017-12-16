@@ -15,7 +15,6 @@
 
 .ans {
 	font-size: 50px;
-	writing-mode: vertical-rl;
 	color: aliceblue;
 	position:absolute;
 	top:50%;
@@ -24,10 +23,19 @@
 	transform:translate(-50%, -50%);
 }
 .next{
+	position: absolute;
+	bottom: 30%;
+	writing-mode: lr-tb;
 	color: aliceblue;
 	font-size: 30px;
-	top:70%;
-	left:50%;
-	display:inline;
-	transform:translate(-50%, -50%);
+	bottom: 10%;
+	right: 50%;
+}
+
+.result{
+	font-size: 60px;
+	color: aliceblue;
+	position:absolute;
+	top:20%;
+	left:65%;
 }
