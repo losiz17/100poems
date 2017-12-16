@@ -31,7 +31,7 @@ qa[19] = ["玉の緒よ<br>絶えなば絶えね<br>ながらへば","あまり�
 
 //初期設定
 q_sel = 3; //選択肢の数
-q_max = 10;//出題数
+q_max = 5;//出題数
 
 setReady();
 
@@ -47,6 +47,10 @@ function setReady() {
 //問題表示
 function quiz() {
 	var m, s, n;
+	next  = "";
+	ans = "";
+	document.getElementById("text_next").innerHTML = next;
+	document.getElementById("text_a").innerHTML = ans;
 	//問題
 	rnd = Math.floor(Math.random() * qa.length); //乱数
 	m = "<div class='box'><p>" + qa[rnd][0] + "</p></div>";
@@ -64,6 +68,13 @@ function quiz() {
 //解答表示
 function anser(num) {
 	var s;
+	//
+	s = "";
+	m = "";
+	tmp = qa[rnd][q_sel+1];
+	document.getElementById("text_s").innerHTML = s;
+	document.getElementById("text_q").innerHTML = m;
+	
 	s = (count + 1) + "問目：";
 	//答え合わせ
 	if (num == qa[rnd][q_sel + 1]) {
@@ -72,13 +83,16 @@ function anser(num) {
 	} else {
 		ansers[count] = "不正解<br>";
 	}
-	s += ansers[count] + qa[rnd][num];
+	s += "<div class='ans'>"+ ansers[count] + qa[rnd][0] + "<br>"+qa[rnd][tmp] +"</div>";
 	document.getElementById("text_a").innerHTML = s;
+	
 	
 	//次の問題を表示
 	count++;
 	if (count < q_max) {
-		quiz();
+		next = "【<a href='javascript:quiz()'><div class='next'>次の問題へ</div></a>】";
+		document.getElementById("text_next").innerHTML = next;
+		//quiz();
 	} else {
 		//終了
 		s = "<table border='2'><caption>成績発表</caption>";

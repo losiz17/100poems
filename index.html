@@ -6,30 +6,37 @@
   <link href="styles/style.css" rel="stylesheet" media="all">
   <link href="styles/quiz.css" rel="stylesheet" media="all">
 	<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet" />
-	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="jquery.scrollablelink.js" type="text/javascript"></script>
 </head>
 <body>
+	<!-- -->
+	<div id="page1" class="pagebox">
+		<h1>ひゃくにんいっしゅ</h1>
+		<div id="text_q" class="l"></div>
+		<div id="text_s" class="m"></div>
+		<div id="text_a" class ="n"></div>
+		<div id="text_next"></div> 
+	</div>
+	<!-- -->
+	<div id="page2" class="pagebox"> 
+		<div id="text_q" class="l"></div>
+		<div id="text_s" class="m"></div>
+		<div id="text_a" class ="n"></div>
+		<div id="text_next"></div> 
+		<a href="#page3" class="scrollable">333</a>
+	</div>
+	<!-- -->
+	<div id="page3" class="pagebox"> 
+		<a href="#page2" class="scrollable"><span></span></a>
+	</div>
+	
+	<!--
   <h1>ひゃくにんいっしゅ</h1>
-	<div class="l">
-	  <div id="text_q"></div>
-	</div>
-	
-	<div class="m">
-		<a href="#modal-p01"><div id="text_s"></div></a>
-	</div>
-	
-	
-
-
-
-
-	<section class="modal-window" id="modal-p01">
-<div class="modal-inner">
-  <div class="n"><div id="text_a"></div></div>
-</div>
-<a href="#!" class="modal-close">&times;</a>
-</section>
-	
+	<div id="text_q" class="l"></div>
+	<div id="text_s" class="m"></div>
+	<div id="text_a" class ="n"></div>
+	-->
 
 
   <script type="text/javascript" src="scripts/script.js"></script>

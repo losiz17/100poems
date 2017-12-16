@@ -12,3 +12,22 @@
 	position: absolute;
 	margin: auto;
 }
+
+.ans {
+	font-size: 50px;
+	writing-mode: vertical-rl;
+	color: aliceblue;
+	position:absolute;
+	top:50%;
+	left:50%;
+	display:inline;
+	transform:translate(-50%, -50%);
+}
+.next{
+	color: aliceblue;
+	font-size: 30px;
+	top:70%;
+	left:50%;
+	display:inline;
+	transform:translate(-50%, -50%);
+}
