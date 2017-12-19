@@ -68,6 +68,7 @@ function quiz() {
 //解答表示
 function anser(num) {
 	var s;
+	correct=0;
 	
 	s = "";
 	m = "";
@@ -80,6 +81,7 @@ function anser(num) {
 	if (num == qa[rnd][q_sel + 1]) {
 		//正解
 		ansers[count] = "<div class='result'>正解<br></div>";
+		correct++;
 	} else {
 		ansers[count] = "<div class='result'>不正解<br></div>";
 	}
@@ -94,7 +96,23 @@ function anser(num) {
 		document.getElementById("text_next").innerHTML = next;
 		//quiz();
 	} else {
+		next = "<a href='javascript:result("+correct+")'><div class='next'>結果を見る</div></a>";
+		document.getElementById("text_next").innerHTML = next;
 		//終了
+	}
+}
+
+function result(correct){
+	var s;
+	s = "";
+	m = "";
+	document.getElementById("text_a").innerHTML = s;
+	document.getElementById("text_next").innerHTML = m;
+	s = "成績発表";
+	s += "五問中"　+ correct + "問正解";
+	document.getElementById("text_q").innerHTML = s;
+}
+/*
 		s = "<table border='2'><caption>成績発表</caption>";
 		//1行目
 		s += "<tr><th>問題</th>";
@@ -117,3 +135,4 @@ function anser(num) {
 		document.getElementById("text_s").innerHTML = s;
 	}
 }
+*/
