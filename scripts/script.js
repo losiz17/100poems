@@ -33,12 +33,14 @@ qa[19] = ["玉の緒よ<br>絶えなば絶えね<br>ながらへば","あまり�
 q_sel = 3; //選択肢の数
 q_max = 5;//出題数
 
+
 setReady();
 
 //初期設定
 function setReady() {
 	count = 0; //問題番号
 	ansers = new Array(); //解答記録
+	correct=0;
 	
 	//最初の問題
 	quiz();
@@ -68,8 +70,8 @@ function quiz() {
 //解答表示
 function anser(num) {
 	var s;
-	correct=0;
 	
+	//問題と選択肢を消す
 	s = "";
 	m = "";
 	tmp = qa[rnd][q_sel+1];
@@ -79,7 +81,6 @@ function anser(num) {
 	//s = (count + 1) + "問目：";
 	//答え合わせ
 	if (num == qa[rnd][q_sel + 1]) {
-		//正解
 		ansers[count] = "<div class='result'>正解<br></div>";
 		correct++;
 	} else {
@@ -104,13 +105,18 @@ function anser(num) {
 
 function result(correct){
 	var s;
+	//答えを消す
 	s = "";
 	m = "";
 	document.getElementById("text_a").innerHTML = s;
 	document.getElementById("text_next").innerHTML = m;
-	s = "成績発表";
-	s += "五問中"　+ correct + "問正解";
-	document.getElementById("text_q").innerHTML = s;
+	//成績発表
+	score = "<div class='last'>成績発表<br></div>";
+	s += score + "<div class='ans'>" + "五問中"　+ correct + "問正解"+"</div>";
+	document.getElementById("text_a").innerHTML = s;
+	//メニュー
+	menu = "<a href='javascript:setReady()'><div class='next'>最初から</div></a>";
+	document.getElementById("text_next").innerHTML = menu;
 }
 /*
 		s = "<table border='2'><caption>成績発表</caption>";
