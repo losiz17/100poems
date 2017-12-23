@@ -6,7 +6,7 @@ document.getElementsByTagName('head')[0].appendChild(cs);
 
 //問題と解答
 qa = new Array();
-qa[0] = ["はるすぎて<br>なつきにけらし<br>しろたえの","ころもほすてふ<br>あまのかぐやま","あまりてなどか<br>ひとのこいしき","みかさのやまに<br>いでしつきかも",1];
+qa[0] = ["春すぎて<br>夏来にけらし<br>白妙の","衣ほすてふ<br>天の香具山","あまりてなどか<br>人の恋しき","行くへも知らぬ<br>恋の道かな",1];
 qa[1] = ["天の原<br>ふりさけ見れば<br>春日なる","行くへも知らぬ<br>恋の道かな","三笠の山に<br>出でし月かも","夢の通ひ路<br>人めよくらむ",2];
 qa[2] = ["これやこの<br>行くも帰るも<br>別れては","霧立ちのぼる<br>秋の夕暮れ","閨のひまさへ<br>つれなかりけり","知るも知らぬも<br>逢坂の関",3];
 qa[3] = ["住の江の<br>岸による波<br>よるさへや","夢の通ひ路<br>人めよくらむ","霧立ちのぼる<br>秋の夕暮れ","流れもあへぬ<br>紅葉なりけり",1];
@@ -55,7 +55,7 @@ function quiz() {
 	document.getElementById("text_a").innerHTML = ans;
 	//問題
 	rnd = Math.floor(Math.random() * qa.length); //乱数
-	m = "<div class='box'><p>" + qa[rnd][0] + "</p></div>";
+	m = "<div class='q_box'><p>" + qa[rnd][0] + "</p></div>";
 	document.getElementById("text_q").innerHTML = m;
 	//選択肢
 	s = "";
@@ -104,15 +104,22 @@ function anser(num) {
 }
 
 function result(correct){
-	var s;
+	var s,str;
 	//答えを消す
 	s = "";
 	m = "";
 	document.getElementById("text_a").innerHTML = s;
 	document.getElementById("text_next").innerHTML = m;
+	//数字を漢数字
+	if(correct==1) str="一";
+	else if(correct==2) str="二";
+	else if(correct==3) str="三";
+	else if(correct==4) str="四";
+	else if(correct==5) str="五";
+	else str="〇";
 	//成績発表
 	score = "<div class='last'>成績発表<br></div>";
-	s += score + "<div class='ans'>" + "五問中"　+ correct + "問正解"+"</div>";
+	s += score + "<div class='ans'>" + "五問中"　+ str + "問正解"+"</div>";
 	document.getElementById("text_a").innerHTML = s;
 	//メニュー
 	menu = "<a href='javascript:setReady()'><div class='next'>最初から</div></a>";

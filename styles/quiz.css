@@ -1,4 +1,14 @@
 @charset"utf-8";
+.q_box {
+    padding: 1em 1em;
+    margin: 1em 1em;
+    border: solid 5px #0B0B61;
+	  width: 100px; height: 200px;
+	  font-size: 25px;
+		background:url('/images/boxpic.jpeg');
+		border-image: url('/images/border.jpeg') 24 24 round;
+}
+
 .box {
     padding: 1em 1em;
     margin: 1em 1em;
@@ -8,10 +18,22 @@
 		background:url('/images/boxpic.jpeg');
 		border-image: url('/images/border.jpeg') 24 24 round;
 }
+
+.box:hover{
+	filter:alpha(opacity=80);
+	opacity:0.8;
+}
+
 .box p{
 	position: absolute;
 	margin: auto;
 }
+
+.q_box p{
+	position: absolute;
+	margin: auto;
+}
+
 
 .ans {
 	font-size: 50px;
