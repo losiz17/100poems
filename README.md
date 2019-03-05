@@ -1,5 +1,6 @@
 # 100poems
 * an anthology of 100 poems by 100 different poets(百人一首)
+* Interested in design
 
 # About 100poems
 * https://ja.wikipedia.org/wiki/%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96
